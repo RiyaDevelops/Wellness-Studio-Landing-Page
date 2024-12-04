@@ -38,7 +38,7 @@
 
     --shadow: 0 5px 20px 0.1px rgba(0,0,0,0,1);
 
-    --h1: clamp(1rem, 0.2226rem + 3.3171vw, 3.125rem);
+    --h1: clamp(2.1875rem, 1.4583rem + 3.3333vw, 4.375rem);
     /* --h2: 3rem; */
     --h2:  clamp(2.8125rem, 2.5rem + 1.4286vw, 3.75rem);
     --h3: clamp(1.5rem, 1.4102rem + 0.3883vw, 1.75rem);
@@ -92,6 +92,19 @@
         width: 100%;
         padding: 0 1.5rem;
         margin: 0 auto; 
+    }
+
+    .heading{
+        color: var(--black);
+        font-weight: var(--fw-bold);
+        font-size: var();
+        text-transform: capitalize;
+        line-height: 1.15;
+    }
+
+    .text{
+        color: var(--clr-paragraph);
+        line-height: 1.6;
     }
 
     .btn{
@@ -181,7 +194,7 @@
     .header{
         width:100%;
         height:90px;
-        border:1px solid red;
+        /* border:1px solid red; */
         /* we want it fixed to the top*/
         position: fixed;
         top:0;
@@ -190,7 +203,7 @@
         padding: 0 1rem;
 
     .container{
-        border: 2px solid green;
+        /* border: 2px solid green; */
         height:100%;
         width:100%;
         display: flex;
@@ -217,7 +230,7 @@
         /* can use gap on flex container */
         gap:1rem;
         font-size: 1.25rem;
-    }
+    
 
     img{
         /* want logo to remain same size no matter screen size */
@@ -225,7 +238,9 @@
         height:55px;
         border-radius: 50%;
     }
+ } 
 
+  }
     .nav__link{
         margin: 0 1rem;
         font-size: var(--p);
@@ -254,6 +269,7 @@
     }
     /* active state */
     }
+  
     #menu-btn{
         font-size:1.6rem;
         color:var(--clr-black);
@@ -270,8 +286,6 @@
         display: none;
     }
 
-
-    }
 
     /* Header Media Queries */
      @media screen and (max-width:976px){
@@ -326,4 +340,172 @@
         }
       }
      }
+
+
+     /* Hero Section */
+     .hero{
+        /* border: 1px solid red; */
+        /* allows us to potion elements without constraints */
+        position: relative;
+        padding:10rem 0 0;
+        overflow: hidden;
+
+      .hero__circle{
+        width:800px;
+        height:800px;
+        border-radius: 50%;
+        background-color: var(--clr-accent);
+        position: absolute;
+        top:-50%;
+        right:-3%
+      }
+
+      .container{
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
+        gap:5rem;
+        position: relative;
+      }
+
+      .hero__text{
+        /* flex grow =1,flex shrink = 1 flex basis = 50 */
+       /* starts at 50% */
+        flex: 1 50%;
+        /* border: 1px solid green; */
+
+       .heading{
+        font-size: var(--h1);     
+        margin-bottom: 24px;
+       }
+
+       .text{
+        margin-bottom: 48px;
+       }
+
+       .hero__cta{
+        display: flex;
+        justify-content: flex-start;
+        /* left does the same  */
+        align-items: center;
+        gap:2rem;
+       }
+      }
+
+      .hero__image{
+        /* border: 1px solid pink; */
+        flex: 1 50%;
+        /* use flex properties need to have a display flex */
+        display: flex;
+        justify-content: center;
+
+
+        img{
+          max-width: 500px;
+          min-width: 320px;
+          /* browser automatically calculate height based on width  */
+          height: auto;
+          object-fit: cover;
+
+        }
+      }
+
+      .shape{
+        position: absolute;
+        width: 40px;
+        height:20px;
+        /* get back its original shape */
+        object-fit: contain;
+
+        &.small{
+            width:20px;
+            height:12px;
+        }
+        
+        /* we address the children by themselves */
+        &:nth-child(1){
+            top:50%;
+            left:50%;
+        }
+        &:nth-child(2){
+            top:35%;
+            left:-5%;
+        }
+        &:nth-child(3){
+            top:10%;
+            left:35%;
+        }
+        &:nth-child(4){
+            top:60%;
+            right:-5%;
+        }
+      }
+     }
+
+     @media screen and (max-width: 960px){
+        .hero{
+
+            .container{
+                flex-direction: column;
+            }
+            .hero__circle{
+                display: none;
+            }
+
+            .hero__image{
+                position: relative;
+                border:1px solid red;
+
+                img{
+                  z-index:2;  
+                }
+            }
+
+            .image-circle{
+                width:  clamp(20rem, 16.25rem + 17.1429vw, 31.25rem);
+                height: clamp(20rem, 16.25rem + 17.1429vw, 31.25rem);
+                border-radius: 50%;
+                background: var(--clr-accent);
+                position: absolute;
+                top:0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .shape{
+                &:nth-child(1){
+                    top: 30%;
+                    left:60%;
+
+                }
+                &:nth-child(2){
+                    top: 45%;
+                    left:5%;
+
+                }
+                &:nth-child(3){
+                    top:10%;
+                    left:75%;
+
+                }
+                &:nth-child(4){
+                    top:40%;
+                    right:0;
+
+                }
+            }
+        }
+
+     }
+
+     @media screen and (max-width:500px) {
+        .hero{
+        .hero__text{
+         .hero__cta{
+            flex-direction: column;
+            /* border:2px solid red; */
+            align-items: start;
+         }
+      }
+    }  
+}
 
