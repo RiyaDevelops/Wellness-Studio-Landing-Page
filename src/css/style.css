@@ -557,7 +557,7 @@ img {
       font-size: var(--h3);
     }
     span {
-      font-size: 50px;
+      font-size: clamp(2.8125rem, 2.7044rem + 0.4673vw, 3.125rem);
       font-weight: var(--fw-bold);
       color: var(--clr-grey);
     }
@@ -620,7 +620,7 @@ img {
 @media screen and (max-width: 950px) {
   .cards {
     height: auto;
-  
+
     .container {
       /*  340px minimum width,  */
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
