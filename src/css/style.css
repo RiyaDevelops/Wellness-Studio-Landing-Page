@@ -1,511 +1,641 @@
 @import url("https://use.fontawesome.com/releases/v6.7.1/css/all.css");
 
 /* Variables */
-:root{
-    /* font family */
-    --ff: "Inter", sans-serif;
-
-    /* font weights */
-    --fw-regular:400;
-    --fw-medium:500;
-    --fw-semibold:600;
-    --fw-bold:700;
-    --fw-extrabold:800;
-
-    --clr-heading: #1c0a0a;
-    --clr-paragraph: #584f49;
-    
-    --clr-primary: #ea5d3f;
-    --clr-primary-light: #ed755a;
-    --clr-primary-extralight: #fff1e8;
-    --clr-secondary: #9dd45e;
-    --clr-secondary-dark: #4a711e;
-    --clr-secondary-2: #b1dd7e;
-    --clr-secondary-3: #c4e59e;
-    --clr-secondary-extra-light: #f5fbef;
-            
-    --clr-accent: #fdc448;
-            
-     --clr-accent-2: #ff9e7b;
-     --clr-accent-2-dark: #fe6a50;
-    --clr-accent-2: #ffe9e4;
-            
-    --clr-black: #1c0a0a;
-    --clr-white: #ffffff;
-    --clr-grey: #cfcfcf;
-
-    --animate: all 0.3s ease-in-out;
-
-    --shadow: 0 5px 20px 0.1px rgba(0,0,0,0,1);
-
-    --h1: clamp(2.1875rem, 1.4583rem + 3.3333vw, 4.375rem);
-    /* --h2: 3rem; */
-    --h2:  clamp(2.8125rem, 2.5rem + 1.4286vw, 3.75rem);
-    --h3: clamp(1.5rem, 1.4102rem + 0.3883vw, 1.75rem);
-    --p: 1.125rem;
-    }
-
-    /* reset */
-    *, *::before, *::after{
-        margin: 0;
-        padding:0;
-        box-sizing: border-box;
-    }
-
-    /* html */
-    html{
-        scroll-behavior: smooth;
-    }
-
-    body{
-        font-family: var(--ff);
-        font-size: var(--p);
-    }
-
-    /* multiple css selectors */
-    h1, h2, h3, h4, p{
-    text-wrap: balance;
-    }
-
-    ul{
-        list-style: none;
-    }
-
-    a{
-        text-decoration: none;
-    }
-
-    img{
-        /* eliminate default space at bottom */
-        display: block;
-        max-width: 100%;
-        /* responsive by default adjust accordingly  */
-        width: 100%;
-    }
-
-    /* Components, code to be reusing over and over */
-
-    .container{
-        position: relative;
-        /* 1200px */
-        max-width: 75rem;
-        width: 100%;
-        padding: 0 1.5rem;
-        margin: 0 auto; 
-    }
-
-    .heading{
-        color: var(--black);
-        font-weight: var(--fw-bold);
-        font-size: var();
-        text-transform: capitalize;
-        line-height: 1.15;
-    }
-
-    .text{
-        color: var(--clr-paragraph);
-        line-height: 1.6;
-    }
-
-    .btn{
-        color:var(--clr-black);
-        border: 1px solid var(--clr-black);
-        padding: 0.8rem 2.5rem;
-        border-radius: 6px;
-        text-transform: capitalize;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: var(--fw-semibold);
-        background: transparent;
-        transition: var(--animate);
-        overflow: hidden;
-        position: relative;
-        z-index: 1;
-
-        /* & represents parent class */
-        /* we want it to slide from left to right */
-        &::before{
-            content: "";
-            background-color: var(--clr-black);
-            width:100%;
-            height:100%;
-            position: absolute;
-            top:0;
-            left:-100%;
-            transform:translateX(0);
-            transition: var(--animate);
-            z-index:-1;
-        }
-        &:hover::before{
-            transform:translateX(100%);
-        }
-
-        &:hover{
-            color: var(--clr-white);
-            /* moves down */
-            transform:translateY(3px) ;
-        }
-    }
-
-    .btn--transparent{
-        border-color: transparent;
-        color: var(--black);
-    }
-
-    .btn--primary{
-        border-color: var(--clr-primary);
-        background: var(--clr-primary);
-        color: white;
-
-    &::before{
-        background: var(--clr-secondary);
-    }
-
-    &:hover{
-        border-color: var(--clr-secondary-dark);
-        color: var(--clr-secondary-dark);
-    }
-    }
-
-    /* btn---light */
-    .btn--primary-light{
-        border-color: var(--clr-primary);
-        background: var(--clr-primary-extralight);
-        color: var(--clr-primary);
-
-    &::before{
-        background: var(--clr-secondary-extra-light);
-    }
-
-    &:hover{
-        border-color: var(--clr-secondary-dark);
-        color: var(--clr-secondary-dark);
-        background: transparent;
-    }
-    }
-
-    .btn--outline{
-        border-color: var(--clr-grey);
-        color: var(--black)
-    }
-
-    /* Header Section */
-    .header{
-        width:100%;
-        height:90px;
-        /* border:1px solid red; */
-        /* we want it fixed to the top*/
-        position: fixed;
-        top:0;
-        left:0;
-        z-index: 100;
-        padding: 0 1rem;
-
-    .container{
-        /* border: 2px solid green; */
-        height:100%;
-        width:100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        /* paddng to left and right */
-        padding-block: 0.3rem;
-        background: var(--clr-white);
-        -webkit-backdrop-filter: blur(15px);
-        box-shadow: var(--shadow);
-        border-radius: 0.5rem;
-        margin-top: 20px;
-        transition: var(--animate);
-    }
-
-    .logo{
-        /* border:1px solid purple; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        color:var(--clr-black);
-        text-transform: capitalize;
-        font-weight: var(--fw-bold);
-        /* can use gap on flex container */
-        gap:1rem;
-        font-size: 1.25rem;
-    
-
-    img{
-        /* want logo to remain same size no matter screen size */
-        width:55px;
-        height:55px;
-        border-radius: 50%;
-    }
- } 
-
-  }
-    .nav__link{
-        margin: 0 1rem;
-        font-size: var(--p);
-        color: var(--clr-paragraph);
-        text-transform: capitalize;
-        font-weight: var(--fw-semibold);
-        cursor: pointer;
-        position: relative;
-        transition: var(--animate);
-
-        /* & is nav__link, pusuedo classes are epxlciity attached to parent element  */
-        &:hover,
-        &.active{
-            color:var(--clr-primary);
-           
-        /* when it is in active state we need a line under over it, only shows u when we hover  */
-        &::after{
-            content: " ";
-            position: absolute;
-            width:30%;
-            height:3px;
-            background: var(--clr-primary);
-            left:0;
-            bottom:-3px;
-        }
-    }
-    /* active state */
-    }
-  
-    #menu-btn{
-        font-size:1.6rem;
-        color:var(--clr-black);
-        cursor:pointer;
-        transition: var(--animate);
-        display: none;
-
-        &.fa-xmark{
-            transform: rotate(180deg);
-        }
-    }
-
-    .nav__link--mobile{
-        display: none;
-    }
-
-
-    /* Header Media Queries */
-     @media screen and (max-width:976px){
-        .header{
-           padding:0;
-            
-        .btn--nav-desktop{
-                display: none;
-            }
-        #menu-btn{
-            display: inline-block;
-        }
-
-        .container{
-           /* no longer need it at a fixed position */
-            position: relative;
-            border-radius: 0;
-            margin-top: 0;
-        }
-        .nav{
-            position: absolute;
-            background-color: rgba(255,255,255,0.95);
-            top:100%;
-            left:40%;
-            right:0;
-            box-shadow: var(--shadow);
-            height:80vh;
-            padding: 2rem;
-            transition: var(--animate);
-            visibility: hidden;
-           
-            &.active{
-               opacity:1;
-               visibility: visible; 
-
-                    .nav__link{
-                        opacity: 1;
-                        font-size: 1.6rem;
-                        margin: 1.5rem 0;
-                        display: block;
-                    
-                        &::after{
-                        opacity: 0;
-                    }
-
-                    &:hover{
-                        margin-left: 1rem;
-                    }
-            
-           }
-            }
-        }
-      }
-     }
-
-
-     /* Hero Section */
-     .hero{
-        /* border: 1px solid red; */
-        /* allows us to potion elements without constraints */
-        position: relative;
-        padding:10rem 0 0;
-        overflow: hidden;
-
-      .hero__circle{
-        width:800px;
-        height:800px;
-        border-radius: 50%;
-        background-color: var(--clr-accent);
-        position: absolute;
-        top:-50%;
-        right:-3%
-      }
-
-      .container{
-        display:flex;
-        justify-content:space-between;
-        align-items: center;
-        gap:5rem;
-        position: relative;
-      }
-
-      .hero__text{
-        /* flex grow =1,flex shrink = 1 flex basis = 50 */
-       /* starts at 50% */
-        flex: 1 50%;
-        /* border: 1px solid green; */
-
-       .heading{
-        font-size: var(--h1);     
-        margin-bottom: 24px;
-       }
-
-       .text{
-        margin-bottom: 48px;
-       }
-
-       .hero__cta{
-        display: flex;
-        justify-content: flex-start;
-        /* left does the same  */
-        align-items: center;
-        gap:2rem;
-       }
-      }
-
-      .hero__image{
-        /* border: 1px solid pink; */
-        flex: 1 50%;
-        /* use flex properties need to have a display flex */
-        display: flex;
-        justify-content: center;
-
-
-        img{
-          max-width: 500px;
-          min-width: 320px;
-          /* browser automatically calculate height based on width  */
-          height: auto;
-          object-fit: cover;
-
-        }
-      }
-
-      .shape{
-        position: absolute;
-        width: 40px;
-        height:20px;
-        /* get back its original shape */
-        object-fit: contain;
-
-        &.small{
-            width:20px;
-            height:12px;
-        }
-        
-        /* we address the children by themselves */
-        &:nth-child(1){
-            top:50%;
-            left:50%;
-        }
-        &:nth-child(2){
-            top:35%;
-            left:-5%;
-        }
-        &:nth-child(3){
-            top:10%;
-            left:35%;
-        }
-        &:nth-child(4){
-            top:60%;
-            right:-5%;
-        }
-      }
-     }
-
-     @media screen and (max-width: 960px){
-        .hero{
-
-            .container{
-                flex-direction: column;
-            }
-            .hero__circle{
-                display: none;
-            }
-
-            .hero__image{
-                position: relative;
-                border:1px solid red;
-
-                img{
-                  z-index:2;  
-                }
-            }
-
-            .image-circle{
-                width:  clamp(20rem, 16.25rem + 17.1429vw, 31.25rem);
-                height: clamp(20rem, 16.25rem + 17.1429vw, 31.25rem);
-                border-radius: 50%;
-                background: var(--clr-accent);
-                position: absolute;
-                top:0;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .shape{
-                &:nth-child(1){
-                    top: 30%;
-                    left:60%;
-
-                }
-                &:nth-child(2){
-                    top: 45%;
-                    left:5%;
-
-                }
-                &:nth-child(3){
-                    top:10%;
-                    left:75%;
-
-                }
-                &:nth-child(4){
-                    top:40%;
-                    right:0;
-
-                }
-            }
-        }
-
-     }
-
-     @media screen and (max-width:500px) {
-        .hero{
-        .hero__text{
-         .hero__cta{
-            flex-direction: column;
-            /* border:2px solid red; */
-            align-items: start;
-         }
-      }
-    }  
+:root {
+  /* font family */
+  --ff: "Inter", sans-serif;
+
+  /* font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --clr-heading: #1c0a0a;
+  --clr-paragraph: #584f49;
+
+  --clr-primary: #ea5d3f;
+  --clr-primary-light: #ed755a;
+  --clr-primary-extralight: #fff1e8;
+  --clr-secondary: #9dd45e;
+  --clr-secondary-dark: #4a711e;
+  --clr-secondary-2: #b1dd7e;
+  --clr-secondary-3: #c4e59e;
+  --clr-secondary-extra-light: #f5fbef;
+
+  --clr-accent: #fdc448;
+
+  --clr-accent-2: #ff9e7b;
+  --clr-accent-2-dark: #fe6a50;
+  --clr-accent-2: #ffe9e4;
+
+  --clr-black: #1c0a0a;
+  --clr-white: #ffffff;
+  --clr-grey: #cfcfcf;
+
+  --animate: all 0.3s ease-in-out;
+
+  --shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0, 1);
+
+  --h1: clamp(2.1875rem, 1.4583rem + 3.3333vw, 4.375rem);
+  /* --h2: 3rem; */
+  --h2: clamp(2.8125rem, 2.5rem + 1.4286vw, 3.75rem);
+  --h3: clamp(1.5rem, 1.4102rem + 0.3883vw, 1.75rem);
+  --p: 1.125rem;
 }
 
+/* reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* html */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff);
+  font-size: var(--p);
+}
+
+/* multiple css selectors */
+h1,
+h2,
+h3,
+h4,
+p {
+  text-wrap: balance;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  /* eliminate default space at bottom */
+  display: block;
+  max-width: 100%;
+  /* responsive by default adjust accordingly  */
+  width: 100%;
+}
+
+/* Components, code to be reusing over and over */
+
+.container {
+  position: relative;
+  /* 1200px */
+  max-width: 75rem;
+  width: 100%;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+.heading {
+  color: var(--black);
+  font-weight: var(--fw-bold);
+  font-size: var();
+  text-transform: capitalize;
+  line-height: 1.15;
+}
+
+.text {
+  color: var(--clr-paragraph);
+  line-height: 1.6;
+}
+
+.btn {
+  color: var(--clr-black);
+  border: 1px solid var(--clr-black);
+  padding: 0.8rem 2.5rem;
+  border-radius: 6px;
+  text-transform: capitalize;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: var(--fw-semibold);
+  background: transparent;
+  transition: var(--animate);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  /* & represents parent class */
+  /* we want it to slide from left to right */
+  &::before {
+    content: "";
+    background-color: var(--clr-black);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transform: translateX(0);
+    transition: var(--animate);
+    z-index: -1;
+  }
+  &:hover::before {
+    transform: translateX(100%);
+  }
+
+  &:hover {
+    color: var(--clr-white);
+    /* moves down */
+    transform: translateY(3px);
+  }
+}
+
+.btn--transparent {
+  border-color: transparent;
+  color: var(--black);
+}
+
+.btn--primary {
+  border-color: var(--clr-primary);
+  background: var(--clr-primary);
+  color: white;
+
+  &::before {
+    background: var(--clr-secondary);
+  }
+
+  &:hover {
+    border-color: var(--clr-secondary-dark);
+    color: var(--clr-secondary-dark);
+  }
+}
+
+/* btn---light */
+.btn--primary-light {
+  border-color: var(--clr-primary);
+  background: var(--clr-primary-extralight);
+  color: var(--clr-primary);
+
+  &::before {
+    background: var(--clr-secondary-extra-light);
+  }
+
+  &:hover {
+    border-color: var(--clr-secondary-dark);
+    color: var(--clr-secondary-dark);
+    background: transparent;
+  }
+}
+
+.btn--outline {
+  border-color: var(--clr-grey);
+  color: var(--black);
+}
+
+.btn-text {
+  color: var(--clr-heading);
+  display: inline-block;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+/* Header Section */
+.header {
+  width: 100%;
+  height: 90px;
+  /* border:1px solid red; */
+  /* we want it fixed to the top*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0 1rem;
+
+  .container {
+    /* border: 2px solid green; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* paddng to left and right */
+    padding-block: 0.3rem;
+    background: var(--clr-white);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: var(--shadow);
+    border-radius: 0.5rem;
+    margin-top: 20px;
+    transition: var(--animate);
+  }
+
+  .logo {
+    /* border:1px solid purple; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--clr-black);
+    text-transform: capitalize;
+    font-weight: var(--fw-bold);
+    /* can use gap on flex container */
+    gap: 1rem;
+    font-size: 1.25rem;
+
+    img {
+      /* want logo to remain same size no matter screen size */
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+    }
+  }
+}
+.nav__link {
+  margin: 0 1rem;
+  font-size: var(--p);
+  color: var(--clr-paragraph);
+  text-transform: capitalize;
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  position: relative;
+  transition: var(--animate);
+
+  /* & is nav__link, pusuedo classes are epxlciity attached to parent element  */
+  &:hover,
+  &.active {
+    color: var(--clr-primary);
+
+    /* when it is in active state we need a line under over it, only shows u when we hover  */
+    &::after {
+      content: " ";
+      position: absolute;
+      width: 30%;
+      height: 3px;
+      background: var(--clr-primary);
+      left: 0;
+      bottom: -3px;
+    }
+  }
+  /* active state */
+}
+
+#menu-btn {
+  font-size: 1.6rem;
+  color: var(--clr-black);
+  cursor: pointer;
+  transition: var(--animate);
+  display: none;
+
+  &.fa-xmark {
+    transform: rotate(180deg);
+  }
+}
+
+.nav__link--mobile {
+  display: none;
+}
+
+/* Header Media Queries */
+@media screen and (max-width: 976px) {
+  .header {
+    padding: 0;
+
+    .btn--nav-desktop {
+      display: none;
+    }
+    #menu-btn {
+      display: inline-block;
+    }
+
+    .container {
+      /* no longer need it at a fixed position */
+      position: relative;
+      border-radius: 0;
+      margin-top: 0;
+    }
+    .nav {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.95);
+      top: 100%;
+      left: 40%;
+      right: 0;
+      box-shadow: var(--shadow);
+      height: 80vh;
+      padding: 2rem;
+      transition: var(--animate);
+      visibility: hidden;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+
+        .nav__link {
+          opacity: 1;
+          font-size: 1.6rem;
+          margin: 1.5rem 0;
+          display: block;
+
+          &::after {
+            opacity: 0;
+          }
+
+          &:hover {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Hero Section */
+.hero {
+  /* border: 1px solid red; */
+  /* allows us to potion elements without constraints */
+  position: relative;
+  padding: 10rem 0 0;
+  overflow: hidden;
+
+  .hero__circle {
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background-color: var(--clr-accent);
+    position: absolute;
+    top: -50%;
+    right: -3%;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    position: relative;
+  }
+
+  .hero__text {
+    /* flex grow =1,flex shrink = 1 flex basis = 50 */
+    /* starts at 50% */
+    flex: 1 50%;
+    /* border: 1px solid green; */
+
+    .heading {
+      font-size: var(--h1);
+      margin-bottom: 24px;
+    }
+
+    .text {
+      margin-bottom: 48px;
+    }
+
+    .hero__cta {
+      display: flex;
+      justify-content: flex-start;
+      /* left does the same  */
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  .hero__image {
+    /* border: 1px solid pink; */
+    flex: 1 50%;
+    /* use flex properties need to have a display flex */
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-width: 500px;
+      min-width: 320px;
+      /* browser automatically calculate height based on width  */
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .shape {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    /* get back its original shape */
+    object-fit: contain;
+
+    &.small {
+      width: 20px;
+      height: 12px;
+    }
+
+    /* we address the children by themselves */
+    &:nth-child(1) {
+      top: 50%;
+      left: 50%;
+    }
+    &:nth-child(2) {
+      top: 35%;
+      left: -5%;
+    }
+    &:nth-child(3) {
+      top: 10%;
+      left: 35%;
+    }
+    &:nth-child(4) {
+      top: 60%;
+      right: -5%;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .hero {
+    .container {
+      flex-direction: column;
+    }
+    .hero__circle {
+      display: none;
+    }
+
+    .hero__image {
+      position: relative;
+      /* border: 1px solid red; */
+
+      img {
+        z-index: 2;
+      }
+    }
+
+    .image-circle {
+      width: clamp(20rem, 16.25rem + 17.1429vw, 31.25rem);
+      height: clamp(20rem, 16.25rem + 17.1429vw, 31.25rem);
+      border-radius: 50%;
+      background: var(--clr-accent);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .shape {
+      &:nth-child(1) {
+        top: 30%;
+        left: 60%;
+      }
+      &:nth-child(2) {
+        top: 45%;
+        left: 5%;
+      }
+      &:nth-child(3) {
+        top: 10%;
+        left: 75%;
+      }
+      &:nth-child(4) {
+        top: 40%;
+        right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero {
+    .hero__text {
+      .hero__cta {
+        flex-direction: column;
+        /* border:2px solid red; */
+        align-items: start;
+      }
+    }
+  }
+}
+
+/* Card section */
+
+.cards {
+  background: var(--clr-secondary);
+  height: 260px;
+  position: relative;
+  z-index: 3;
+  padding-bottom: 2rem;
+
+  .container {
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* row column */
+    gap: 7rem 1rem;
+    /* padding: 0; */
+    justify-items: start;
+  }
+  .card {
+    max-height: 282px;
+    min-height: 252px;
+    max-width: 350px;
+    padding: 26px;
+    /* 1column, 2 row  */
+    display: grid;
+    grid-template-areas:
+      "title"
+      "image";
+    background: var(--clr-white);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-top: -5rem;
+    /* border: 2px solid blue; */
+    /* overflow-y: hidden; */
+    transition: var(--animate);
+  }
+  .card__title {
+    grid-area: title;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .heading {
+      font-size: var(--h3);
+    }
+    span {
+      font-size: 50px;
+      font-weight: var(--fw-bold);
+      color: var(--clr-grey);
+    }
+  }
+
+  .card__desc {
+    grid-area: desc;
+    display: none;
+  }
+
+  .card__image {
+    grid-area: image;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    /* display:none; */
+    /* border: 2px solid red; */
+  }
+  .card:hover {
+    grid-template-areas:
+      "title image"
+      "desc image";
+    min-width: 400px;
+    background-color: var(--clr-accent-2-dark);
+    color: var(--clr-white);
+
+    .card__title {
+      display: block;
+
+      .heading {
+        color: var(--clr-white);
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    .card__desc {
+      display: block;
+
+      .btn-text {
+        color: var(--clr-white);
+      }
+    }
+
+    .card__image {
+      transform: translateX(5%);
+      transition: transform 0.3s ease-in-out;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+/* media queries cards section  */
+
+@media screen and (max-width: 950px) {
+  .cards {
+    height: auto;
+  
+    .container {
+      /*  340px minimum width,  */
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .cards {
+    .card {
+      width: 100%;
+      min-width: 100%;
+    }
+    .card:hover {
+      min-width: 100%;
+    }
+  }
+}
