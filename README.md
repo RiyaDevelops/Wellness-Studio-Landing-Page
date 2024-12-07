@@ -12,3 +12,7 @@ https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjUwMHB4Iiwi
 ### Windsurf - A.I C
 https://codeium.com/windsurf
 
+
+## Notes
+ Put all media queries at the bottom of file 
+
