@@ -33,6 +33,7 @@
   --clr-black: #1c0a0a;
   --clr-white: #ffffff;
   --clr-grey: #cfcfcf;
+  --clr-oultine-light: #f4f5f7;
 
   --shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
 
@@ -1080,6 +1081,239 @@ img {
       .card {
         max-width: 100%;
         /* border:1px solid green; */
+      }
+    }
+  }
+}
+
+/*----------- pricing section */
+.pricing {
+  position: relative;
+  padding: 6rem 0;
+  background-color: #f5f6f9;
+
+  .container {
+    /* all descendants of parent container inherit this property, inheritance */
+    text-align: center;
+    /* border: 3px solid green; */
+  }
+
+  .pricing__title {
+    max-width: 70%;
+    margin: 0 auto 5rem;
+
+    .heading {
+      font-size: var(--h2);
+      color: var(--clr-heading);
+      margin-bottom: 1rem;
+    }
+  }
+
+  .pricing__cards {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4.5rem 2rem;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 350px;
+      width: 100%;
+      /* set the min height for the tallest element */
+      min-height: 670px;
+      /* border: 1px solid pink; */
+      background-color: var(--clr-white);
+      position: relative;
+
+      .card__title {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid var(--clr-outline-light);
+        width: 100%;
+        display: grid;
+        place-items: center;
+
+        .heading {
+          color: inherit;
+          font-weight: var(--fw-semibold);
+          font-size: 24px;
+        }
+      }
+
+      &:nth-child(1) {
+        .card__title {
+          /* background-color: pink; */
+          .heading::before {
+            content: "Recommended";
+            /* puts on new line, now a block level element */
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: var(--fw-bold);
+            color: transparent;
+          }
+
+          .heading::after {
+            content: "$15.";
+            /* puts on new line, now a block element */
+            display: block;
+            font-size: 34px;
+            font-weight: var(--fw-bold);
+            margin-top: 1rem;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        .card__title {
+          background-color: var(--clr-primary);
+          color: var(--clr-white);
+
+          .heading::before {
+            content: "Recommended";
+            /* puts on new line, now a block level element */
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: var(--fw-bold);
+          }
+
+          .heading::after {
+            content: "$60.";
+            /* puts on new line, now a block level element */
+            display: block;
+            font-size: 34px;
+            font-weight: var(--fw-bold);
+            margin-top: 1rem;
+          }
+        }
+
+        .cta{
+          background-color: var(--clr-primary);
+          color: var(--clr-white);
+
+          a{
+            color: var(--clr-white);
+          }
+
+          i[class^="fa"]{
+            background-color: var(--clr-primary-light);
+
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        .card__title {
+          /* background-color: pink; */
+          .heading::before {
+            content: "Recommended";
+            /* puts on new line, now a block level element */
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: var(--fw-bold);
+            color: transparent;
+          }
+
+          .heading::after {
+            content: "$150.";
+            /* puts on new line, now a block element */
+            display: block;
+            font-size: 34px;
+            font-weight: var(--fw-bold);
+            margin-top: 1rem;
+          }
+        }
+      }
+
+      .text {
+        /* top and bottom */
+        padding-block: 1.2rem;
+      }
+
+      .card__items {
+        text-align: left;
+        width: 100%;
+        /* border:2px solid green; */
+        padding: 1rem;
+
+        li {
+          border: 1px solid var(--clr-outline-light);
+          border-radius: 0.5rem;
+          padding-block: 1rem;
+          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          column-gap: 1.5rem;
+          padding-left: 1rem;
+        }
+
+        /* the element(icon) /i can be replaced with anchor tag / with a class that begins with fa */
+        i[class^="fa"] {
+          color: var(--clr-secondary);
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 0.8rem;
+          background: var(--clr-secondary-extra-light);
+        }
+      }
+
+      .cta {
+        border: 2px solid var(--clr-primary);
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0.5rem;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 1.5rem;
+
+        a {
+          color: var(--clr-primary);
+          /* border: 1px solid green; */
+          width: 100%;
+          text-align: center;
+          font-weight: var(--fw-semibold);
+          padding-block: 0.5rem;
+        }
+
+        i[class^="fa"] {
+          width: 40px;
+          height: 40px;
+          background: var(--clr-primary);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: var(--clr-white);
+        }
+      }
+    }
+  }
+}
+
+/* Pricing media queries  */
+@media screen  and (max-width:600px){
+  .pricing{
+    .pricing__title{
+      max-width: 100%;
+    }
+    .pricing__cards{
+      .card{
+        max-width: 90%;
       }
     }
   }
