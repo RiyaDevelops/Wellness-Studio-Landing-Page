@@ -15,4 +15,5 @@ https://codeium.com/windsurf
 
 ## Notes
  Put all media queries at the bottom of file 
+ # optimize images 
 
