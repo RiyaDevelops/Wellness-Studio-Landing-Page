@@ -15,5 +15,7 @@ https://codeium.com/windsurf
 
 ## Notes
  Put all media queries at the bottom of file 
- # optimize images 
+ # optimize images - want image twice the size that we use in css
+ # need to change image file , and file size --- optimization 
+
 
