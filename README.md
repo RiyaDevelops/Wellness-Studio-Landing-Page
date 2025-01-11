@@ -1,5 +1,5 @@
-# Yoga Landing Studio 
-This is a landing page built with Html,CSS, and Javavscript.
+# Wellness Studio Landing Page
+This is a landing page built with Html,CSS, and Javascript. Built webpage from Figma Design. 
 
 ## Source Code 
 [Source Code](src/)
@@ -14,8 +14,9 @@ https://codeium.com/windsurf
 
 
 ## Notes
- Put all media queries at the bottom of file 
- # optimize images - want image twice the size that we use in css
+ # Put all media queries at the bottom of file 
+ # optimize images - want image twice the size that we use in css: https://wpengine.com/resources/optimize-images-for-web/
  # need to change image file , and file size --- optimization 
+ # set it twice the size as what we have it set in css 
 
 

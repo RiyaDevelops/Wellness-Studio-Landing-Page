@@ -1160,7 +1160,7 @@ img {
           }
 
           .heading::after {
-            content: "$15.";
+            content: "$20.";
             /* puts on new line, now a block element */
             display: block;
             font-size: 34px;
@@ -1186,7 +1186,7 @@ img {
           }
 
           .heading::after {
-            content: "$60.";
+            content: "$50.";
             /* puts on new line, now a block level element */
             display: block;
             font-size: 34px;
@@ -1224,7 +1224,7 @@ img {
           }
 
           .heading::after {
-            content: "$150.";
+            content: "$100.";
             /* puts on new line, now a block element */
             display: block;
             font-size: 34px;
