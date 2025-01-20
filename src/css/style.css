@@ -1562,7 +1562,7 @@ img {
 /* news letter media queries  */
 @media screen and (max-width: 1182px) {
   .news {
-    padding: 0 1rem;
+    padding: 5rem 1rem;
   }
 }
 @media screen and (max-width: 1110px) {
@@ -1574,6 +1574,8 @@ img {
 }
 @media screen and (max-width: 980px) {
   .news {
+    padding: 7rem 1rem;
+
     .news__form {
       width: 80%;
     }
