@@ -1688,6 +1688,8 @@ img {
 
 .footer {
   padding: 1rem 0;
+  background-color: var(--clr-white);
+
 
   .container {
     display: flex;
