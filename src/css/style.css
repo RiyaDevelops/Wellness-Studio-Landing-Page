@@ -369,6 +369,7 @@ img {
   position: relative;
   padding: 10rem 0 0;
   overflow: hidden;
+  background-color: var(--clr-white);
 
   .hero__circle {
     width: 800px;
@@ -658,6 +659,7 @@ img {
 .stats {
   position: relative;
   padding: 6rem 0 14rem;
+  background-color: var(--clr-white);
 
   .container {
     /* border: 2px solid pink; */
@@ -927,6 +929,8 @@ img {
 .programs {
   padding: 6rem 0;
   position: relative;
+  background-color: var(--clr-white);
+
 
   .container {
     text-align: center;
@@ -1330,6 +1334,8 @@ img {
 .testimonials {
   padding: 6rem 0 5rem;
   position: relative;
+  background-color: var(--clr-white);
+
 
   .container {
     /* border: 2px solid green; */
