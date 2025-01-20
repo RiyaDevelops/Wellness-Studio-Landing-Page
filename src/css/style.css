@@ -513,6 +513,9 @@ img {
 
 @media screen and (max-width: 500px) {
   .hero {
+    .shape{
+      display: none;
+    }
     .hero__text {
       .hero__cta {
         flex-direction: column;
