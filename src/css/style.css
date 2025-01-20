@@ -1601,6 +1601,7 @@ img {
 .contact {
   position: relative;
   padding: 10rem 0 0;
+  background: var(--clr-white);
 
   .container {
     background: url("../img/contact-bg.png");
