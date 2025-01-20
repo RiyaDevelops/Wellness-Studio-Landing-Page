@@ -20,7 +20,7 @@
 
   --clr-primary-light:#31ae63;
   /* #E6E6FA */
-  --clr-primary-extralight:#f8f7f2;
+  --clr-primary-extralight:#FAF9F6;
   /* --clr-secondary: #9dd45e; */
   --clr-secondary: #E6E6FA;
 
@@ -192,7 +192,7 @@ img {
   color: var(--clr-white);
 
   &::before {
-    background: #4CBB17;
+    background: var(--clr-accent-2-dark);
   }
 
   &:hover {
@@ -1266,7 +1266,7 @@ img {
 
         /* the element(icon) /i can be replaced with anchor tag / with a class that begins with fa */
         i[class^="fa"] {
-          color: var(--clr-secondary-dark);
+          color: var(--clr-white);
           border-radius: 50%;
           width: 30px;
           height: 30px;
@@ -1274,7 +1274,7 @@ img {
           justify-content: center;
           align-items: center;
           font-size: 0.8rem;
-          background: var(--clr-secondary-2);
+          background: var(--clr-secondary-dark);
         }
       }
 
@@ -1406,14 +1406,14 @@ img {
 
     .testimonial__image {
       border-radius: 50%;
-      background-color: var(--clr-secondary-dark);
+      background-color: var(--clr-accent);
       width: 90px;
       height: 90px;
       align-items: center;
       justify-content: center;
       margin-top: -70px;
       overflow: hidden;
-      padding-top: 5px;
+      padding-top: 8px;
 
       img {
         width: 100%;
