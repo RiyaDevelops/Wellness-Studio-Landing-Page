@@ -254,6 +254,7 @@ img {
     /* can use gap on flex container */
     gap: 1rem;
     font-size: 1.25rem;
+    overflow: hidden;
 
     img {
       /* want logo to remain same size no matter screen size */
