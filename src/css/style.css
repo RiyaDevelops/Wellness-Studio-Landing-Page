@@ -245,7 +245,6 @@ img {
   }
 
   .logo {
-    /* border:1px solid purple; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -1636,6 +1635,7 @@ img {
     box-shadow: var(--shadow);
     margin-top: -5rem;
     /* height: 70%; */
+
 
     input[type="text"],
     input[type="email"],
