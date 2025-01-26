@@ -18,6 +18,10 @@ https://codeium.com/windsurf
  ### optimize images - want image twice the size that we use in css: https://wpengine.com/resources/optimize-images-for-web/
  ### need to change image file , and file size --- optimization 
  ### Best Image Resizer Tool: https://imageresizer.com/
+ 
+ ## Website screenshot:   
+ ### https://pagepeeker.com/
+ ### https://screenshot.rocks/app
  ### set it twice the size as what we have it set in css 
 
 
