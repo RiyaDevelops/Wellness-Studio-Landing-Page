@@ -338,7 +338,7 @@ img {
       padding: 2rem;
       /* transition: var(--animate); */
       visibility: hidden;
-      border: border 2px solid green;
+      border: 6px solid black;
 
       &.active {
         opacity: 1;
