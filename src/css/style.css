@@ -226,6 +226,8 @@ img {
   left: 0;
   z-index: 100;
   padding: 0 1rem;
+  overflow: hidden;
+
 
   .container {
     /* border: 2px solid green; */
@@ -344,6 +346,7 @@ img {
       /* transition: var(--animate); */
       visibility: hidden;
       border: 6px solid black;
+      
 
       &.active {
         opacity: 1;
