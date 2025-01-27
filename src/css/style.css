@@ -226,7 +226,7 @@ img {
   left: 0;
   z-index: 100;
   padding: 0 1rem;
-  overflow: hidden;
+  /* overflow: hidden; */
 
 
   .container {
@@ -256,18 +256,14 @@ img {
     /* can use gap on flex container */
     gap: 1rem;
     font-size: 1.25rem;
-    overflow: hidden;
-   max-width: 100%; /* Prevent overflow */
-   flex-wrap: wrap; /* Allow wrapping on smaller screens */
+ 
 
     img {
       /* want logo to remain same size no matter screen size */
       width: 55px;
       height: 55px;
       border-radius: 50%;
-      max-width: 100%; /* Ensure it respects container bounds */
-      object-fit: cover; /* Keeps the aspect ratio intact */
-     
+    
     }
   }
 }
