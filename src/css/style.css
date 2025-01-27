@@ -97,7 +97,6 @@ img {
   max-width: 100%;
   /* responsive by default adjust accordingly  */
   width: 100%;
-  overflow: hidden;
 }
 
 /* Components, code to be reusing over and over */
@@ -259,8 +258,8 @@ img {
 
     img {
       /* want logo to remain same size no matter screen size */
-      width: 55px;
-      height: 55px;
+      max-width: 55px;
+      max-height: 55px;
       border-radius: 50%;
     }
   }
