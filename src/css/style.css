@@ -1609,7 +1609,7 @@ img {
   background: var(--clr-white);
 
   .container {
-    background: url("../img/contact-bg.png");
+    background: url("../img/contact-bg.webp");
     background-repeat: no-repeat;
     background-size: contain;
     min-height: 600px;
