@@ -490,7 +490,7 @@ img {
       left: 50%;
       transform: translateX(-50%);
     }
-    /* .shape {
+    .shape {
       &:nth-child(1) {
         top: 30%;
         left: 60%;
@@ -507,15 +507,15 @@ img {
         top: 40%;
         right: 0;
       }
-    } */
+    }
   }
 }
 
 @media screen and (max-width: 500px) {
   .hero {
-    /* .shape{
+    .shape{
       display: none;
-    } */
+    }
     .hero__text {
       .hero__cta {
         flex-direction: column;
