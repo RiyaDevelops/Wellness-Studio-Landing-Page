@@ -97,6 +97,7 @@ img {
   max-width: 100%;
   /* responsive by default adjust accordingly  */
   width: 100%;
+  overflow: hidden;
 }
 
 /* Components, code to be reusing over and over */
