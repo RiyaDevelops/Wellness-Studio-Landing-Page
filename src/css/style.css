@@ -258,8 +258,8 @@ img {
 
     img {
       /* want logo to remain same size no matter screen size */
-      max-width: 55px;
-      max-height: 55px;
+      width: 55px;
+      height: 55px;
       border-radius: 50%;
     }
   }
@@ -1545,6 +1545,7 @@ img {
         outline-color: transparent;
         /* background: var(--clr-secondary); */
         color: var(--clr-white);
+      
 
         &:focus,
         &:active {
@@ -1593,6 +1594,12 @@ img {
 
       .input-group {
         flex-basis: 60%;
+
+        input[type="email"] {
+         font-size: 0.5rem;
+        
+
+        }
       }
 
       .btn[type="submit"] {
