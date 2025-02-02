@@ -410,6 +410,28 @@ img {
   }
 }
 
+
+
+
+@media screen and (max-width: 700px) {
+  .header {
+  
+    .nav {
+      height: 60vh;
+      &.active {
+         .nav__link {
+          font-size: 1.3rem;
+
+          &:hover {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 /* Hero Section */
 .hero {
   /* border: 1px solid red; */
@@ -1935,9 +1957,8 @@ img {
     -webkit-box-shadow: var(--shadow);
             box-shadow: var(--shadow);
     margin-top: -5rem;
+
     /* height: 70%; */
-
-
     input[type="text"],
     input[type="email"],
     textarea {
@@ -1947,6 +1968,7 @@ img {
       border-radius: 0.5rem;
       border: transparent;
       outline: 2px solid var(--clr-outline-light);
+
     }
     label {
       visibility: hidden;
@@ -1993,6 +2015,14 @@ img {
         color: var(--clr-primary);
       }
     }
+
+  }
+ form > div > span{
+  text-wrap: balance;
+  color:red;
+ }
+ form > button{
+    margin-top: 28px;
   }
 }
 
