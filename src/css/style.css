@@ -189,11 +189,12 @@ img {
   }
 }
 
+/* sign in */
 .btn--transparent {
-  border-color: transparent;
-  color: var(--black);
+  border-color: transparent;  
 }
 
+/* primary button */
 .btn--primary {
   border-color: var(--clr-primary);
   background: var(--clr-primary);
@@ -229,6 +230,7 @@ img {
 .btn--outline {
   border-color: var(--clr-grey);
   color: var(--black);
+
 }
 
 .btn-text {
@@ -373,17 +375,16 @@ img {
     }
     .nav {
       position: absolute;
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: rgba(255, 255, 255, 0.99);
       top: 100%;
       left: 40%;
       right: 0;
       -webkit-box-shadow: var(--shadow);
               box-shadow: var(--shadow);
-      height: 80vh;
+      height: 50vh;
       padding: 2rem;
       /* transition: var(--animate); */
       visibility: hidden;
-      border: 6px solid black;
       
 
       &.active {
