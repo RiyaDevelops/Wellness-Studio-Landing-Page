@@ -1,3 +1,6 @@
+![alt text](image.png)
+
+
 # Wellness Studio Landing Page
 This is a landing page built with Html,CSS, and Javascript. Built webpage from Figma Design. 
 
