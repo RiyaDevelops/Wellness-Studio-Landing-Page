@@ -21,9 +21,9 @@ https://coolors.co/contrast-checker/ffffff-004d00
 
 
 ## Notes
- ### Put all media queries at the bottom of file 
+ ### Media Queries Organization 
   ## Image Optimization --- optimization for faster page load speed
- ### optimize images - want image twice the size that we use in css: https://wpengine.com/resources/optimize-images-for-web/
+ ### Optimize images - want image twice the size that we use in css: https://wpengine.com/resources/optimize-images-for-web/
  
  ### Best Image Resizer Tool: https://imageresizer.com/
  ## Website screenshot:   
