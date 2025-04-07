@@ -124,7 +124,7 @@ img {
 .heading {
   color: var(--black);
   font-weight: var(--fw-bold);
-  font-size: var();
+  /* font-size: var(); */
   text-transform: capitalize;
   line-height: 1.15;
 }
@@ -2032,7 +2032,7 @@ img {
       margin-top: 3rem;
     }
       div > span {
-       color: red;
+       /* color: red; */
         font-size: 1rem;
         max-width: 50%;
       }
